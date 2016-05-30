@@ -47,6 +47,13 @@ public class LinkedListTest {
         assertEquals(5, head.data);
     }
 
+    @Test
+    public void onAnEmptyListTheValuePassedBecomesTheHead() throws Exception {
+        final LinkedListStructure linkedListStructure = new LinkedListStructure();
+        final Node head = linkedListStructure.insertHead(null, 9);
+        assertEquals(9, head.data);
+    }
+
     @NotNull
     private ArrayList<Integer> expectedList() {
         final ArrayList<Integer> list = new ArrayList<>();

@@ -22,26 +22,24 @@ public class LinkedListStructure {
     }
 
     public Node insert(Node head, int data) {
-        final Node node = new Node(data);
-        return head == null ? node : insertNodeInTheTail(head, node);
+        return head == null ? new Node(data) : insertNodeInTheTail(head, data);
     }
 
     @Nullable
-    private Node insertNodeInTheTail(Node head, Node node) {
+    private Node insertNodeInTheTail(Node head, int data) {
         Node currentNode = head;
         while (currentNode != null) {
-            currentNode = (currentNode.next == null) ? node : currentNode.next;
+            if (currentNode.next == null) {
+                currentNode.next = new Node(data);
+                break;
+            }
+            currentNode = currentNode.next;
         }
         return head;
     }
 
     public Node insertHead(Node head, int data) {
-        if (head != null) {
-            final Node tail = new Node(head.data);
-            head.data = data;
-            head.next = tail;
-        }
-        return head;
+        return new Node(data, head);
     }
 }
 
