@@ -3,6 +3,8 @@ package net.sylvestertech.java.easy.dataStructures;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jetbrains.annotations.Nullable;
+
 public class LinkedListStructure {
 
     private final List<Integer> list = new ArrayList<>();
@@ -21,9 +23,11 @@ public class LinkedListStructure {
 
     public Node insert(Node head, int data) {
         final Node node = new Node(data);
-        if (head == null) {
-            return node;
-        }
+        return head == null ? node : insertNodeInTheTail(head, node);
+    }
+
+    @Nullable
+    private Node insertNodeInTheTail(Node head, Node node) {
         Node currentNode = head;
         while (currentNode != null) {
             if (currentNode.next == null) {
