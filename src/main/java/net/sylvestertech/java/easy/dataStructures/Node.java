@@ -21,9 +21,17 @@ class Node {
 
     @Override
     public boolean equals(Object obj) {
-        if (!(obj instanceof Node)) {
+        if (!(obj instanceof Node) || obj == null) {
             return false;
         }
-        return data == ((Node) obj).data;
+
+        if (next == null && ((Node) obj).next == null && data == ((Node) obj).data) {
+            return true;
+        } else if (next == null && ((Node) obj).next != next) {
+            return false;
+        } else if (next.equals(((Node) obj).next) && data == ((Node) obj).data){
+            return true;
+        }
+        return false;
     }
 }
