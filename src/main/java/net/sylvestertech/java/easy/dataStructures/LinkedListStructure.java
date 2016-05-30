@@ -30,11 +30,16 @@ public class LinkedListStructure {
     private Node insertNodeInTheTail(Node head, Node node) {
         Node currentNode = head;
         while (currentNode != null) {
-            if (currentNode.next == null) {
-                currentNode.next = node;
-                break;
-            }
-            currentNode = currentNode.next;
+            currentNode = (currentNode.next == null) ? node : currentNode.next;
+        }
+        return head;
+    }
+
+    public Node insertHead(Node head, int data) {
+        if (head != null) {
+            final Node tail = new Node(head.data);
+            head.data = data;
+            head.next = tail;
         }
         return head;
     }

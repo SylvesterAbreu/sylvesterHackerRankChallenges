@@ -40,6 +40,13 @@ public class LinkedListTest {
         assertEquals(4, tail.next.next.data);
     }
 
+    @Test
+    public void insertNewValueAsHead() throws Exception {
+        final LinkedListStructure linkedListStructure = new LinkedListStructure();
+        final Node head = linkedListStructure.insertHead(new Node(4), 5);
+        assertEquals(5, head.data);
+    }
+
     @NotNull
     private ArrayList<Integer> expectedList() {
         final ArrayList<Integer> list = new ArrayList<>();
