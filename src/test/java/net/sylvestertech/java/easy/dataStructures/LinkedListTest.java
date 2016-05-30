@@ -57,7 +57,7 @@ public class LinkedListTest {
     }
 
     private Node getList() {
-        final Node first = new Node(5, null);
+        final Node first = new Node(5);
         final Node second = new Node(4, first);
         return new Node(3, second);
     }
