@@ -10,31 +10,20 @@ import org.junit.Test;
 public class LinkedListTest {
 
     @Test
-    public void copyElementsFromLinkedListToAnArrayList() throws Exception {
-        final LinkedListStructure linkedListStructure = new LinkedListStructure();
-        linkedListStructure.print(getList());
-        assertEquals(expectedList(), linkedListStructure.getList());
+    public void retrieveValuesFromLinkedList() throws Exception {
+        assertEquals(expectedList(), LinkedListStructure.getListOfValues(getList()));
     }
 
     @Test
-    public void whenInsertingValueInNullHeadThenReturnHeadWithValuePassed() throws Exception {
+    public void returnNewHeadWhenListIsNull() throws Exception {
         final Node expectedNode = new Node(2);
-        final LinkedListStructure linkedListStructure = new LinkedListStructure();
-        assertEquals(expectedNode, linkedListStructure.insert(null, 2));
+        assertEquals(expectedNode, LinkedListStructure.insert(null, 2));
     }
 
     @Test
-    public void insertNewValueAsHead() throws Exception {
-        final LinkedListStructure linkedListStructure = new LinkedListStructure();
-        final Node head = linkedListStructure.insertHead(new Node(4), 5);
+    public void insertNewValueInTheHeadOfList() throws Exception {
+        final Node head = LinkedListStructure.insertHead(new Node(4), 5);
         assertEquals(5, head.data);
-    }
-
-    @Test
-    public void onAnEmptyListTheValuePassedBecomesTheHead() throws Exception {
-        final LinkedListStructure linkedListStructure = new LinkedListStructure();
-        final Node head = linkedListStructure.insertHead(null, 9);
-        assertEquals(9, head.data);
     }
 
     @NotNull
