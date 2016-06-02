@@ -31,10 +31,10 @@ public class LinkedListStructure {
         Node currentNode = head;
         while (count <= position) {
             if (count == position) {
-                Node tmp = currentNode.next;
-                currentNode.next = new Node(data);
-                currentNode.next.next = tmp;
-                break;
+                Node tmp = currentNode;
+                currentNode = new Node(data);
+                currentNode.next = tmp;
+                return currentNode;
             }
             currentNode = currentNode.next;
             count++;
