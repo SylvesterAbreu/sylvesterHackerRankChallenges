@@ -26,6 +26,19 @@ public class LinkedListTest {
         assertEquals(5, head.data);
     }
 
+    @Test
+    public void returnListWithSingleNodeWhenAskedToAddValueToNullList() throws Exception {
+        assertEquals(LinkedListStructure.insertAt(null, 9, 8), new Node(9));
+    }
+/*
+    @Test
+    public void insertValueAtGivenPositionIndexBaseZero() throws Exception {
+        final Node first = new Node(5);
+        final Node second = new Node(4, first);
+        assertEquals(getList(), LinkedListStructure.insertAt(second, 3, 2));
+    }
+*/
+
     @NotNull
     private ArrayList<Integer> expectedList() {
         final ArrayList<Integer> list = new ArrayList<>();

@@ -22,6 +22,25 @@ public class LinkedListStructure {
     public static Node insertHead(Node head, int data) {
         return new Node(data, head);
     }
+
+    public static Node insertAt(final Node head, final int data, final int position) {
+        if (null == head) {
+            return new Node(data);
+        }
+        int count = 0;
+        Node currentNode = head;
+        while (count <= position) {
+            if (count == position) {
+                Node tmp = currentNode.next;
+                currentNode.next = new Node(data);
+                currentNode.next.next = tmp;
+                break;
+            }
+            currentNode = currentNode.next;
+            count++;
+        }
+        return head;
+    }
 }
 
 
