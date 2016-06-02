@@ -32,12 +32,18 @@ public class LinkedListTest {
     }
 
     @Test
-    public void returnListWithValueAtGivenPositionZero() throws Exception {
+    public void returnListWithPassedValueGivenPositionZero() throws Exception {
         final Node second = new Node(5);
         final Node first = new Node(4, second);
         final Node expectedList = getList();
         final Node actualList = LinkedListStructure.insertAt(first, 3, 0);
         assertEquals(expectedList, actualList);
+    }
+
+    @Test
+    public void returnListWithPassedValueGivenPositionThree() throws Exception {
+        final Node expectedList = getList().next.next = new Node(6);
+        assertEquals(expectedList, LinkedListStructure.insertAt(getList(), 6, 3));
     }
 
     @NotNull
