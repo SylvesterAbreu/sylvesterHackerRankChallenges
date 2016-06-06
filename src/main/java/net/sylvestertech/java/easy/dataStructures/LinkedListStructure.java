@@ -24,23 +24,26 @@ public class LinkedListStructure {
     }
 
     public static Node insertAt(final Node head, final int data, final int position) {
+        final Node newNode = new Node(data);
         if (null == head) {
-            return new Node(data);
+            return newNode;
         }
-        int count = 0;
+        int currentPosition = 0;
         Node currentNode = head;
-        while (count <= position) {
-            if (count == position) {
-                Node tmp = currentNode;
-                currentNode = new Node(data);
-                currentNode.next = tmp;
-                return currentNode;
+        while (currentPosition <= position) {
+            if (position == 0 && currentPosition == 0) {
+                newNode.next = head;
+                return newNode;
+            }
+            if (currentPosition == position -1) {
+                Node nextNode = currentNode.next;
+                newNode.next = nextNode;
+                currentNode.next = newNode;
+                return head;
             }
             currentNode = currentNode.next;
-            count++;
+            currentPosition++;
         }
         return head;
+        }
     }
-}
-
-

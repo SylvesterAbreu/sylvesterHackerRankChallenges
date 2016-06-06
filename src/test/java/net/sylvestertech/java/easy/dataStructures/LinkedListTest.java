@@ -42,8 +42,15 @@ public class LinkedListTest {
 
     @Test
     public void returnListWithPassedValueGivenPositionThree() throws Exception {
-        final Node expectedList = getList().next.next = new Node(6);
+        final Node expectedList = getList();
+        expectedList.next.next.next = new Node(6);
         assertEquals(expectedList, LinkedListStructure.insertAt(getList(), 6, 3));
+    }
+
+    @Test
+    public void returnListWhenPositionGivenIsHigherThanItsLenght() throws Exception {
+        final Node expectedList = getList();
+        assertEquals(expectedList, LinkedListStructure.insertAt(getList(), 3, 10));
     }
 
     @NotNull
