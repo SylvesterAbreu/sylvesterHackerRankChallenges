@@ -29,21 +29,25 @@ public class LinkedListStructure {
             return newNode;
         }
         int currentPosition = 0;
+        Node lastNode = null;
         Node currentNode = head;
-        while (currentPosition <= position) {
+        while (currentPosition <= position && currentNode != null) {
             if (position == 0 && currentPosition == 0) {
                 newNode.next = head;
                 return newNode;
-            }
-            if (currentPosition == position -1) {
+            } else if (currentPosition == position - 1) {
                 Node nextNode = currentNode.next;
                 newNode.next = nextNode;
                 currentNode.next = newNode;
                 return head;
             }
+            lastNode = currentNode;
             currentNode = currentNode.next;
             currentPosition++;
         }
-        return head;
+        if (position > currentPosition && lastNode != null) {
+            lastNode.next = newNode;
         }
+        return head;
     }
+}
