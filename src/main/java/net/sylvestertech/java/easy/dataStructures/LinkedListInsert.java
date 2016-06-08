@@ -10,11 +10,17 @@ class LinkedListInsert {
 
     @Nullable
     private static Node insertNodeInTheTail(Node head, int data) {
-        Node currentNode = head;
-        while (currentNode != null && currentNode.next!=null) {
-            currentNode = currentNode.next;
-        }
+        final Node currentNode = getLastNode(head);
         currentNode.next = new Node(data);
         return head;
+    }
+
+    @Nullable
+    private static Node getLastNode(Node head) {
+        Node node = head;
+        while (node != null && node.next!=null) {
+            node = node.next;
+        }
+        return node;
     }
 }
