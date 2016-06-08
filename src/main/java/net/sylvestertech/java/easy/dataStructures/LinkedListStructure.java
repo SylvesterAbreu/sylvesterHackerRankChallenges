@@ -15,39 +15,15 @@ public class LinkedListStructure {
         return list;
     }
 
-    public static Node insert(Node head, int data) {
-        return head == null ? new Node(data) : LinkedListInsert.addToTheTail(head, data);
+    public static Node insertInTheTail(Node head, int data) {
+        return head == null ? new Node(data) : LinkedListInsert.inTheTail(head, data);
     }
 
     public static Node insertHead(Node head, int data) {
         return new Node(data, head);
     }
 
-    public static Node insertAt(final Node head, final int data, final int position) {
-        final Node newNode = new Node(data);
-        if (null == head) {
-            return newNode;
-        }
-        int currentPosition = 0;
-        Node lastNode = null;
-        Node currentNode = head;
-        while (currentPosition <= position && currentNode != null) {
-            if (position == 0 && currentPosition == 0) {
-                newNode.next = head;
-                return newNode;
-            } else if (currentPosition == position - 1) {
-                Node nextNode = currentNode.next;
-                newNode.next = nextNode;
-                currentNode.next = newNode;
-                return head;
-            }
-            lastNode = currentNode;
-            currentNode = currentNode.next;
-            currentPosition++;
-        }
-        if (position > currentPosition && lastNode != null) {
-            lastNode.next = newNode;
-        }
-        return head;
+    public static Node insertAtGivenPosition(final Node head, final int data, final int position) {
+        return head == null ? new Node(data) : LinkedListInsert.valueAtGivenPosition(head, position, data);
     }
 }
