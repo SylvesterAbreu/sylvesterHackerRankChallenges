@@ -5,7 +5,7 @@ import org.jetbrains.annotations.Nullable;
 class LinkedListInsert {
 
     public static Node inTheTail(Node head, int data) {
-        return head == null ? new Node(data) : insertNodeInTheTail(head, data);
+        return (null == head) ? new Node(data) : insertNodeInTheTail(head, data);
     }
 
     public static Node valueAtGivenPosition(Node head, int position, int data) {
@@ -27,7 +27,7 @@ class LinkedListInsert {
             currentNode = currentNode.next;
             currentPosition++;
         }
-        if (position > currentPosition && lastNode != null) {
+        if ((null != lastNode) && (position > currentPosition)) {
             lastNode.next = newNode;
         }
         return head;
