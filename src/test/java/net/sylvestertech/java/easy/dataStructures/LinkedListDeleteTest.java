@@ -33,7 +33,15 @@ public class LinkedListDeleteTest {
     */
 
     @Test
-    public void returnEmptyListWhenHeadIsNull() {
+    public void returnEmptyListWhenHeadIsNull() throws Exception {
         assertEquals(null, LinkedListDelete.nodeAtPosition(null, 8));
+    }
+
+    @Test
+    public void returnHeadWhenSecondPositionIsDeleted() throws Exception {
+        final Node secondNode = new Node(1);
+        final Node firstNode = new Node(0);
+        firstNode.next = secondNode;
+        assertEquals(new Node(0), LinkedListDelete.nodeAtPosition(firstNode, 1));
     }
 }
