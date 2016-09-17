@@ -9,7 +9,7 @@ import org.junit.Test;
 public class JavaOutputFormattingTest {
 
     @Test
-    public void printOutFifteenCharactersOfStringAndThreeDigits() throws Exception {
+    public void printOutFifteenCharactersOfStringAndThreeDigitsWhenTwoDigitsArePassedAsSecondArgument() throws Exception {
 
         final JavaOutputFormatter javaOutputFormatter = new JavaOutputFormatter();
         final ByteArrayOutputStream outContent = javaOutputFormatter.printTextAndIntegerWithThreeDigits("Hello", 60);
