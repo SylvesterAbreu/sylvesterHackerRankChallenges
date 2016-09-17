@@ -17,4 +17,11 @@ public class JavaOutputFormattingTest {
         assertEquals("Hello          060", outContent.toString());
     }
 
+    @Test
+    public void printOutFifteenCharactersOfStringAndThreeDigitsWhenOneDigitIsPassedAsSecondArgument() throws Exception {
+        final JavaOutputFormatter javaOutputFormatter = new JavaOutputFormatter();
+        final ByteArrayOutputStream outContent = javaOutputFormatter.printTextAndIntegerWithThreeDigits("Ola", 4);
+
+        assertEquals("Ola            004", outContent.toString());
+    }
 }
