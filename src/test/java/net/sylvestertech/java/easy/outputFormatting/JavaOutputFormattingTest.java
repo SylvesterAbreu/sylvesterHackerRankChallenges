@@ -9,12 +9,12 @@ import org.junit.Test;
 public class JavaOutputFormattingTest {
 
     @Test
-    public void printOutHelloAndSixtyWithThreeDigitsWhenTwoDigitsProvided() throws Exception {
+    public void printOutFifteenCharactersOfStringAndThreeDigits() throws Exception {
 
         final JavaOutputFormatter javaOutputFormatter = new JavaOutputFormatter();
         final ByteArrayOutputStream outContent = javaOutputFormatter.printTextAndIntegerWithThreeDigits("Hello", 60);
 
-        assertEquals("Hello 060", outContent.toString());
+        assertEquals("Hello          060", outContent.toString());
     }
 
 }
