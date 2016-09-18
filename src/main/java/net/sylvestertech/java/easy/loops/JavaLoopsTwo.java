@@ -9,6 +9,6 @@ public class JavaLoopsTwo {
     }
 
     public int getQueryValue() {
-        return queryValue > 0 ? queryValue : -1;
+        return queryValue >= 0 ? queryValue : -1;
     }
 }

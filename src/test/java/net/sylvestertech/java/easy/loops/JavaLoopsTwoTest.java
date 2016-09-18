@@ -11,4 +11,10 @@ public class JavaLoopsTwoTest {
         final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(4);
         assertEquals(4, javaLoopsTwo.getQueryValue());
     }
+
+    @Test
+    public void queryValueIsEqualToZero() throws Exception {
+        final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(0);
+        assertEquals(0, javaLoopsTwo.getQueryValue());
+    }
 }
