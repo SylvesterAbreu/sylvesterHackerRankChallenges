@@ -17,10 +17,14 @@ public class JavaLoopsTwo {
     }
 
     public int getValueA() {
-        return valueA < 0 || valueA > 50 ? -1 : valueA;
+        return returnMinusOneIfValueIsLessThanZeroAndGreaterThanFiftyOtherwiseReturnValue(valueA);
     }
 
     public int getValueB() {
-        return valueB < 0 || valueB > 50 ? -1: valueB;
+        return returnMinusOneIfValueIsLessThanZeroAndGreaterThanFiftyOtherwiseReturnValue(valueB);
+    }
+
+    private int returnMinusOneIfValueIsLessThanZeroAndGreaterThanFiftyOtherwiseReturnValue(final int value) {
+        return value < 0 || value > 50 ? -1 : value;
     }
 }
