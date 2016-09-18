@@ -17,4 +17,10 @@ public class JavaLoopsTwoTest {
         final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(0);
         assertEquals(0, javaLoopsTwo.getQueryValue());
     }
+
+    @Test
+    public void queryValueIsMinusOneWhenArgumentPassedIsLessThanZero() throws Exception {
+        final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(-2);
+        assertEquals(-1, javaLoopsTwo.getQueryValue());
+    }
 }
