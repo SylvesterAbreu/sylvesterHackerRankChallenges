@@ -24,6 +24,8 @@ public class JavaLoopsTwoTest {
         assertEquals(-1, javaLoopsTwo.getQueryValue());
     }
 
+
+
     @Test
     public void assertValueAisGreaterThanZero() throws Exception {
         final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(1,4);
@@ -43,7 +45,7 @@ public class JavaLoopsTwoTest {
     }
 
     @Test
-    public void assertValueAisMinusOneWhenArgumentPassedIsGreaterThanFifity() throws Exception {
+    public void assertValueAisMinusOneWhenArgumentPassedIsGreaterThanFifty() throws Exception {
         final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(5, 51);
         assertEquals(-1, javaLoopsTwo.getValueA());
     }
