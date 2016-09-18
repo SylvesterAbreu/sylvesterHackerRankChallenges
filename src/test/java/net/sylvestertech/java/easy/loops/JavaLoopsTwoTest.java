@@ -29,4 +29,10 @@ public class JavaLoopsTwoTest {
         final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(1,4);
         assertEquals(4, javaLoopsTwo.getValueA());
     }
+
+    @Test
+    public void assertValueAisMinusOneWhenArgumentPassedIsLessThanZero() throws Exception {
+        final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(4, -5);
+        assertEquals(-1, javaLoopsTwo.getValueA());
+    }
 }
