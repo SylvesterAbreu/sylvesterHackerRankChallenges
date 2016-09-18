@@ -21,6 +21,6 @@ public class JavaLoopsTwo {
     }
 
     public int getValueB() {
-        return valueB;
+        return valueB < 0 ? -1: valueB;
     }
 }
