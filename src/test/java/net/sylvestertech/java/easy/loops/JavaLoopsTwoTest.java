@@ -41,4 +41,10 @@ public class JavaLoopsTwoTest {
         final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(3, 46);
         assertEquals(46, javaLoopsTwo.getValueA());
     }
+
+    @Test
+    public void assertValueAisMinusOneWhenArgumentPassedIsGreaterThanFifity() throws Exception {
+        final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(5, 51);
+        assertEquals(-1, javaLoopsTwo.getValueA());
+    }
 }

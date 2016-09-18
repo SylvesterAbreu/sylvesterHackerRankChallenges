@@ -15,8 +15,6 @@ public class JavaLoopsTwo {
     }
 
     public int getValueA() {
-        if (valueA < 0)
-            return -1;
-        return valueA;
+        return valueA < 0 || valueA > 50 ? -1 : valueA;
     }
 }
