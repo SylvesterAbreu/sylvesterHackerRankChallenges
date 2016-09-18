@@ -4,10 +4,12 @@ public class JavaLoopsTwo {
 
     private final int queryValue;
     private final int valueA;
+    private final int valueB;
 
-    public JavaLoopsTwo(int queryValue, int valueA) {
+    public JavaLoopsTwo(int queryValue, int valueA, int valueB) {
         this.queryValue = queryValue;
         this.valueA = valueA;
+        this.valueB = valueB;
     }
 
     public int getQueryValue() {
@@ -16,5 +18,9 @@ public class JavaLoopsTwo {
 
     public int getValueA() {
         return valueA < 0 || valueA > 50 ? -1 : valueA;
+    }
+
+    public int getValueB() {
+        return valueB;
     }
 }

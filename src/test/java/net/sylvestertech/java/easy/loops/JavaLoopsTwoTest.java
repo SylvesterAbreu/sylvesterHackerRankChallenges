@@ -8,19 +8,19 @@ public class JavaLoopsTwoTest {
 
     @Test
     public void queryValueIsGreaterThanZero() throws Exception {
-        final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(4, 4);
+        final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(4, 4, 9);
         assertEquals(4, javaLoopsTwo.getQueryValue());
     }
 
     @Test
     public void queryValueIsEqualToZero() throws Exception {
-        final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(0, 4);
+        final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(0, 4, 9);
         assertEquals(0, javaLoopsTwo.getQueryValue());
     }
 
     @Test
     public void queryValueIsMinusOneWhenArgumentPassedIsLessThanZero() throws Exception {
-        final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(-2, 4);
+        final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(-2, 4, 9);
         assertEquals(-1, javaLoopsTwo.getQueryValue());
     }
 
@@ -28,25 +28,31 @@ public class JavaLoopsTwoTest {
 
     @Test
     public void assertValueAisGreaterThanZero() throws Exception {
-        final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(1,4);
+        final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(1,4, 9);
         assertEquals(4, javaLoopsTwo.getValueA());
     }
 
     @Test
     public void assertValueAisMinusOneWhenArgumentPassedIsLessThanZero() throws Exception {
-        final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(4, -5);
+        final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(4, -5, 9);
         assertEquals(-1, javaLoopsTwo.getValueA());
     }
 
     @Test
     public void assertValueAisLessThanFifty() throws Exception {
-        final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(3, 46);
+        final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(3, 46, 9);
         assertEquals(46, javaLoopsTwo.getValueA());
     }
 
     @Test
     public void assertValueAisMinusOneWhenArgumentPassedIsGreaterThanFifty() throws Exception {
-        final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(5, 51);
+        final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(5, 51, 9);
         assertEquals(-1, javaLoopsTwo.getValueA());
+    }
+
+    @Test
+    public void assertValueBisGreaterThanZero() throws Exception {
+        final JavaLoopsTwo javaLoopsTwo = new JavaLoopsTwo(2, 6, 9);
+        assertEquals(9, javaLoopsTwo.getValueB());
     }
 }
